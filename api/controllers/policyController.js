@@ -8,6 +8,6 @@ exports.searchPolicy = async function(req, res) {
 		const result = await policyServiceInst.searchByPolicy(req.query);
 		return res.status(200).send(result);
 	} catch (err) {
-		res.status(500).send(err);
+		res.status(400).send(err);
 	}
 };

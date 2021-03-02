@@ -18,3 +18,5 @@ app.use('/api/search', policyRoute);
 app.listen(port, () => {
 	console.log(`Server running on ${port}`);
 });
+
+module.exports = app;
