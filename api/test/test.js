@@ -9,15 +9,35 @@ chai.use(chaiHttp);
 
 describe('Policy API', () => {
 	/**
-     * Test GET route
+     * Test GET search route
      */
 	describe('GET /api/search', () => {
 		it('It should GET list of carrier name', (done) => {
-			chai.request(server).get('/api/search?name=state_apt&state=CA').end((err, response) => {
+			chai.request(server).get('/api/search?name=fire&state=IL').end((err, response) => {
 				response.should.have.status(200);
 				response.body.should.be.a('object');
 				response.body.should.have.property('success').eq(true);
 				response.body.should.have.property('body').be.a('array');
+				done();
+			});
+		});
+
+		it('GET Bad Request, Invalid Policy', (done) => {
+			chai.request(server).get('/api/search?name=xyz&state=CA').end((err, response) => {
+				response.should.have.status(400);
+				response.body.should.be.a('object');
+				response.body.should.have.property('success').eq(false);
+				response.body.should.have.property('error').be.eq('Invalid Policy Type');
+				done();
+			});
+		});
+
+		it('GET Bad Request, Invalid State', (done) => {
+			chai.request(server).get('/api/search?name=fire&state=ZX').end((err, response) => {
+				response.should.have.status(400);
+				response.body.should.be.a('object');
+				response.body.should.have.property('success').eq(false);
+				response.body.should.have.property('error').be.eq('Invalid State');
 				done();
 			});
 		});
