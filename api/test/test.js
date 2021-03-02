@@ -17,7 +17,7 @@ describe('Policy API', () => {
 				response.should.have.status(200);
 				response.body.should.be.a('object');
 				response.body.should.have.property('success').eq(true);
-				response.body.should.have.property('body').be.a('array');
+				response.body.should.have.property('carriers').be.a('array');
 				done();
 			});
 		});
@@ -27,7 +27,7 @@ describe('Policy API', () => {
 				response.should.have.status(400);
 				response.body.should.be.a('object');
 				response.body.should.have.property('success').eq(false);
-				response.body.should.have.property('error').be.eq('Invalid Policy Type');
+				response.body.should.have.property('message').be.eq('Invalid Policy Type');
 				done();
 			});
 		});
@@ -37,7 +37,7 @@ describe('Policy API', () => {
 				response.should.have.status(400);
 				response.body.should.be.a('object');
 				response.body.should.have.property('success').eq(false);
-				response.body.should.have.property('error').be.eq('Invalid State');
+				response.body.should.have.property('message').be.eq('Invalid State');
 				done();
 			});
 		});

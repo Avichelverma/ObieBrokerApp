@@ -16,12 +16,12 @@ class PostService {
 					const fireCarrierList = firePolicyCollection.state_carrier[state];
 					const autoCarrierList = autoPolicyCollection.state_carrier[state];
 					const carrierList = fireCarrierList.filter((value) => autoCarrierList.includes(value));
-					return { success: true, body: carrierList };
+					return { success: true, carriers: carrierList };
 				}
 				const policyCollection = await this.repo.findByName(name);
 				if (state in policyCollection.state_carrier) {
 					const carrierList = policyCollection.state_carrier[state];
-					return { success: true, body: carrierList };
+					return { success: true, carriers: carrierList };
 				} else {
 					throw 'Invalid State';
 				}
@@ -29,7 +29,7 @@ class PostService {
 				throw 'Invalid Policy Type';
 			}
 		} catch (err) {
-			throw { success: false, error: err };
+			throw { success: false, message: err };
 		}
 	}
 }

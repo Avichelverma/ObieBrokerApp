@@ -31,7 +31,7 @@ class App extends Component {
 		let query = { name: policyName, state: stateAbbv };
 		PolicyAPI.searchPolicy(query)
 			.then((response) => {
-				this.setState({ carrierList: response.data.body, isCarrierList: true });
+				this.setState({ carrierList: response.data.carriers, isCarrierList: true });
 			})
 			.catch((e) => {
 				console.log(e);
