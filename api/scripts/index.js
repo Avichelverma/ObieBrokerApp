@@ -11,12 +11,6 @@ MongoClient.connect(url, function(err, client) {
 
 	const db = client.db(dbName);
 
-	// db.dropDatabase(function(err, delOK) {
-	// 	if (err) throw err;
-	// 	if (delOK) console.log('Database Deleted');
-	// 	client.close();
-	// });
-
 	main().then((value) => {
 		insertDocuments(db, value, function() {
 			client.close();

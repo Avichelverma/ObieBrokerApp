@@ -96,5 +96,10 @@ All the endpoints will be routed through `/api`
     "carriers":["Allstate","Auto Owners","Bristol West (High Risk Auto)","Chubb","Encompass","Founders","National     General","Nationwide","Progressive","SafeCo","Secura","State Auto","Travelers"]
 }
 ```
+
+### Screenshot
+
+![alt text](screenshots/testing.png "Testing done using Mocha")
+
 ### Author
 - Avichel Verma developed the following application; Successfully tested the API using Mocha and Chai.
