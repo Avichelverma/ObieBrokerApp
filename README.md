@@ -99,6 +99,7 @@ All the endpoints will be routed through `/api`
 
 ### Screenshot
 
+- Screenshot of Mocha Testing
 ![alt text](screenshots/testing.png "Testing done using Mocha")
 
 ### Author

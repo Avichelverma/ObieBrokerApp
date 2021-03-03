@@ -6,7 +6,7 @@ function Header() {
 	// const classes = useStyles();
 	return (
 		<Navbar bg="dark" variant="dark">
-			<Navbar.Brand href="#home">Obie</Navbar.Brand>
+			<Navbar.Brand href="/">Obie</Navbar.Brand>
 		</Navbar>
 	);
 }

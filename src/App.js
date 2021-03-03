@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React, { Component } from 'react';
 import Footer from './components/Footer/Footer.component';
 import Header from './components/Header/Header.component';
@@ -102,15 +102,23 @@ class App extends Component {
 												{optionStateList}
 											</Form.Control>
 										</Col>
-										<Col>
+										<div className="button-wrapper">
 											<Button variant="success" onClick={this.handleSubmit}>
-												Submit
+												Search
 											</Button>
-										</Col>
+										</div>
 									</Row>
 								</Form>
 							</Card>
-							<div>{isCarrierList ? <ListItem carrierList={carrierList} /> : <h5>Go Ahead, Search and Get Results</h5>}</div>
+							<div>
+								{isCarrierList ? (
+									<ListItem carrierList={carrierList} />
+								) : (
+									<div style={{ textAlign: 'center' }}>
+										<h5>Go Ahead, Search and Get Results</h5>
+									</div>
+								)}
+							</div>
 						</div>
 					</div>
 				</div>
