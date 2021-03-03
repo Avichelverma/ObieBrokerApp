@@ -52,6 +52,29 @@ The Technologies used in stack:
 - Javascript
 - Mocha and Chai [Javascript Test Framework]
 
+#### Project Folder Structure
+```
+/
+|-- api
+|   |-- controllers
+|   |-- models
+|   |-- repository
+|   |-- routes
+|   |-- scripts
+|   |-- services
+|   |-- test
+|   `-- index.js
+|-- screenshots
+|-- src
+|   |-- components
+|   |   |-- Header
+|   |   |-- Footer
+|   |   |-- ListItem
+|   |-- utils
+|   |-- App.js
+|   |-- App.scss
+|   |-- index.js  
+```
 #### Running Server
 **To run the express server locally:**
 Before starting local express server. First make sure to start MongoDB server and keep it running. Secondly, Drop the ObieTestDB and run the following command to start the script and server using `npm start`.
@@ -101,6 +124,10 @@ All the endpoints will be routed through `/api`
 
 - Screenshot of Mocha Testing
 ![alt text](screenshots/testing.png "Testing done using Mocha")
+- Landing Page
+![alt text](screenshots/landingpage.png "Landing Page")
+- Broker select auto coverage in Michigan. Nationwide is present but not Allstate.
+![alt text](screenshots/searchdemo.png "Search Demo")
 
 ### Author
 - Avichel Verma developed the following application; Successfully tested the API using Mocha and Chai.
