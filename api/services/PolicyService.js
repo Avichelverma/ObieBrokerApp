@@ -17,7 +17,7 @@ class PostService {
 	async searchByPolicy(query) {
 		try {
 			const { name, state } = query;
-			if (name === 'fire' || name === 'auto' || name === 'both' || name === 'state_apt') {
+			if (name === 'fire' || name === 'auto' || name === 'both' || name === 'flood' || name === 'state_apt') {
 				if (name === 'both') {
 					const firePolicyCollection = await this.repo.findByName('fire');
 					const autoPolicyCollection = await this.repo.findByName('auto');

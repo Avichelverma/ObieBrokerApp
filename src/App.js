@@ -93,6 +93,7 @@ class App extends Component {
 												<option value="fire">Fire</option>
 												<option value="auto">Auto</option>
 												<option value="both">Both</option>
+												<option value="flood">Flood</option>
 												<option value="state_apt">State Apt</option>
 											</Form.Control>
 										</Col>

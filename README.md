@@ -21,7 +21,7 @@ Currently, our brokers navigate the process of finding a carrier using a google 
 - (optional) Please transform the spreadsheet into an API. This API can take whatever form you choose, but you must be able to explain your choices.
 
 ### My Approach to this Challenge
-There are two supersets namely, PL and CL. There are four types of policy coverages *Fire,Auto,Both,State Apt* that are offered by various carriers in different states.
+There are two supersets namely, PL and CL. There are five types of policy coverages *Fire,Auto,Both,Flood,State Apt* that are offered by various carriers in different states.
 
 First, I've written a script in JavaScript that scraps the information from the workbook and store it into 4 collections named after the four policies. And in these respected collection, it holds a Key:Value pair of State:List of carriers. And further storing it into MongoDB.
 
@@ -37,7 +37,7 @@ This makes our frontend client lightweight for faster loading of the application
 I have built a Full-Stack Web Application using MERN Stack (MongoDB, Express, React, Nodejs). It is designed with two key functional areas:
 
 #### 1. Backend
-The `./api` directory contains an REST Express server that follows **MVC sturcture, and 3-Layer Architecture**. The database of choice is **MongoDB**. The reason for this choice of database is to have a collection of various policies, namely *FIRE,AUTO,BOTH, and STATE APT.* The schema for this collection is:
+The `./api` directory contains an REST Express server that follows **MVC sturcture, and 3-Layer Architecture**. The database of choice is **MongoDB**. The reason for this choice of database is to have a collection of various policies, namely *FIRE, AUTO, BOTH, FLOOD, and STATE APT.* The schema for this collection is:
 ```
 {
     name:"fire"   // the policy name
@@ -90,7 +90,7 @@ The Technologies used in stack:
 ```
 #### Running Server
 **To run the express server locally:**
-Before starting local express server. First make sure to start MongoDB server and keep it running. Secondly, Drop the ObieTestDB and run the following command to start the script and server using `npm start`.
+Before starting local express server. First make sure to start MongoDB server and keep it running. Secondly, Drop the ObieTestDB, and after that run the following command to start the script and server using `npm start`. This will run the preprocessing script first, and then express server.
 ```
 mongod // to run MongoDB server
 cd api
@@ -102,10 +102,10 @@ cd /
 npm start
 ```
 **Testing the API Endpoint:**
-To run the tests, navigate to api folder, and the mongodb server should be up and running. Run the following commands
+To run the tests, navigate to api folder, and the mongodb server should be running and the ObieTestDB should be present in database. Run the following commands
 ```
 cd api
-npm start
+npm test
 ```
 ### API Reference Guide
 
