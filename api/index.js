@@ -9,14 +9,13 @@ const port = process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 
-// pass routes
+// routes with API
 app.use('/api/search', policyRoute);
 
-// app.get('/', (req, res) => {
-// 	res.send('Hello world');
-// });
-
 // Setup static content here such as post-build react client
+// app.get('/', (req, res)=>{
+// 	server client build here
+// })
 
 // Start the application
 app.listen(port, () => {
