@@ -20,6 +20,19 @@ Currently, our brokers navigate the process of finding a carrier using a google 
     - For example: when a user selects Auto Insurance in Michigan, the page *should* show Allstate as an option. When they change the state to Indiana, Allstate should *not* be shown as an option.
 - (optional) Please transform the spreadsheet into an API. This API can take whatever form you choose, but you must be able to explain your choices.
 
+### My Approach to this Challenge
+There are two supersets namely, PL and CL. There are four types of policy coverages *Fire,Auto,Both,State Apt* that are offered by various carriers in different states.
+
+First, I've written a script in JavaScript that scraps the information from the workbook and store it into 4 collections named after the four policies. And in these respected collection, it holds a Key:Value pair of State:List of carriers. And further storing it into MongoDB.
+
+With the help of Express server backend, the GET `/api/search` endpoints receives the requests and respondes back with a body that contains the list of carrier for the following policy name and state.
+
+This makes our frontend client lightweight for faster loading of the application and relaying on the backend to process and return with proper results.
+
+### Future Scope
+- To make it easier for the Admin to update the values in the database, I would build an interface that would provide the functionality of CRUD operations to the database. This would save the time of updating the workbook.
+- And also, we can put a button on the dashboard that would run the script to update the database again, if the Admin wants to perform updation in the workbook.
+- With theses above approach, we can avoid manually copying the spreadsheet data into our code and make it more friendly for the Admin.
 ### About the Stack
 I have built a Full-Stack Web Application using MERN Stack (MongoDB, Express, React, Nodejs). It is designed with two key functional areas:
 
@@ -56,20 +69,20 @@ The Technologies used in stack:
 ```
 /
 |-- api
-|   |-- controllers
-|   |-- models
-|   |-- repository
-|   |-- routes
-|   |-- scripts
-|   |-- services
-|   |-- test
-|   `-- index.js
+|   |-- controllers     # Express controllers that responds to requests.
+|   |-- models          # Database models
+|   |-- repository      # Repository that communicates with the database
+|   |-- routes          # Manages routes to controller
+|   |-- scripts         # Custom script for importing dataset from workbook to database
+|   |-- services        # Encapsulates all business logic
+|   |-- test            # Contains the test scripts
+|   `-- index.js        # Entry point for application
 |-- screenshots
 |-- src
-|   |-- components
-|   |   |-- Header
-|   |   |-- Footer
-|   |   |-- ListItem
+|   |-- components      # Various Components in React
+|   |   |-- Header      # Header Component
+|   |   |-- Footer      # Footer Component
+|   |   |-- ListItem    # List-Items Component
 |   |-- utils
 |   |-- App.js
 |   |-- App.scss
