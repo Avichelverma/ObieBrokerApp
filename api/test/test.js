@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 describe('Policy API', () => {
 	/**
-     * Test GET search route
+     * Test GET search route with one success and two error scenarios
      */
 	describe('GET /api/search', () => {
 		it('It should GET list of carrier name', (done) => {

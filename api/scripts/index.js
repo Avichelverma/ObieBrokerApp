@@ -6,6 +6,11 @@ const url = 'mongodb://localhost:27017';
 
 const dbName = 'ObieTestDB';
 
+/**
+ * Custom Script to scrap the Carrier Preference spreadsheet and further inserting the collections into database.
+ * Mongodb should be up and running before running this script. Drop the Database ObieTestDB before running this script
+ */
+
 MongoClient.connect(url, function(err, client) {
 	console.log('Connected Successfully to server');
 

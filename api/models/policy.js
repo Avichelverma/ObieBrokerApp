@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// Policy Model
+
 const policySchema = new mongoose.Schema({
 	name: {
 		type: String,
